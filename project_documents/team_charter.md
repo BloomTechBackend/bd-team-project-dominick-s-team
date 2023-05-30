@@ -1,4 +1,4 @@
-# [team name] Team Charter
+# Dominick's Team
 
 ## Instructions
 
@@ -35,7 +35,7 @@ These resources may be helpful as you fill out your team charter. They are optio
 
 |Name            |Preferred Contact Method (Zoom, Slack, email, etc.) |
 |---	           |---                                           |
-|Team Member (a) |                                              |
+|Team Member (a) | Dominick Barnes                                             |
 |Team Member (b) |                                              |
 |Team Member (c) |                                              |
 |Team Member (d) |                                              |
@@ -77,28 +77,24 @@ These resources may be helpful as you fill out your team charter. They are optio
 ### Goals
 
 * **Overall: What is our overall objective for the Learn & Be Curious unit?**
-    *E.g., “Apply what we’ve learned throughout BloomTech in a team project to prepare
-    ourselves for internships and full-time SDE roles.”*
+    * “Apply what i have learned to build a project i once felt was impossible.”*
 
 
 * **Performance: What do we want to prioritize in terms of what we achieve?**
-    *What will be true when you have 'succeeded' on this project? E.g. enjoy
-    ourselves, maintain our energy to the end, ensure all team members
-    participate, create professional connections, exceed instructor
-    expectations, efficiently pace the project so we’re not rushing at the end,
-    etc.*
+    *Develop new coding skills. Further train in writing clean readable code. Practice my testing 
+    capabilities to be able to write tests that verify all use cases. Have fun and learn to tackle 
+    big projects step by step. *
 
 
 * **Learning: What are the things that our team wants to learn?**
-    *E.g., develop SDE knowledge, enhance leadership skills, master project
-    planning, improve testing skills, etc*
+    * I would like to get better at writing tests. learn how the design phase can help save time in developing.
+    * Learn some frontend skills to be able to make a user interface. reflect my passion for coding in a project 
+    * that it my own *
 
 
 * **Task processes: What processes will our team follow to meet our goals,
   complete tasks, or to build team relationships?**
-    *E.g., leadership, meeting procedures/length of meetings, expectations for
-    meeting attendance and timeliness, other types of meetings (happy hours,
-    lunch and learns)*
+    * Daily and weekly refelction including certain time frames for goals.*
 
 
 ## Meaning & Impact
@@ -106,19 +102,16 @@ These resources may be helpful as you fill out your team charter. They are optio
 **What is personally important for each team member about joining BloomTech? About
 becoming an software engineer?**
 
-* *Team member name*:
-* *Team member name*:
-* *Team member name*:
-* *Team member name*:
+* *Dominick Barnes*: building the skills I need to be a part of a massive industry with promising growth. Finding 
+* a job that will support my family and my dreams for my life. 
+
 
 **What each team member wants to achieve: e.g. improve analytical skills, learn
 project management skills, develop public speaking skills, speak up more, speak
 up less, etc.**
 
-* *Team member name*:
-* *Team member name*:
-* *Team member name*:
-* *Team member name*:
+* *Dominick Barnes*: further understand how code works together and how breaking down large projects makes them simpler
+
 
 ## Team Member Roles and Responsibilities
 
@@ -138,7 +131,4 @@ rotating or permanent roles as you go.*
 
 **I agree to the terms and conditions of these team agreements:**
 
-* Team member (a) Name & Date:
-* Team member (b) Name & Date:
-* Team member (c) Name & Date:
-* Team member (d) Name & Date:
+* Team member (a) Name & Date: Dominick Barnes 5/30/2023
