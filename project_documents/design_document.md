@@ -1,121 +1,84 @@
-# [team name] Design Document
+# Dominick's Team Design Document
 
 ## Instructions
 
-*Save a copy of this template for your team in the same folder that contains
-this template.*
-
-*Replace italicized text (including this text!) with details of the design you
-are proposing for your team project. (Your replacement text shouldn't be in
-italics)*
-
-*You should take a look at the example design document in the same folder as
-this template for more guidance on the types of information to capture, and the
-level of detail to aim for.*
-
-## *Project Title* Design
+## *At Home Recipes* Design
 
 ## 1. Problem Statement
 
-*Explain clearly what problem you are trying to solve.*
+*Take user input of ingredients they have at home, giving them a list of recipes they can make with said ingredients, so they can cook without having to go to the store.*
 
 
 ## 2. Top Questions to Resolve in Review
 
-*List the most important questions you have about your design, or things that
-you are still debating internally that you might like help working through.*
-
-1.   
-2.   
-3.  
+1.   how to make an appealing user interface
+2.   how to get a list if only part of the ingredients are found
 
 ## 3. Use Cases
 
-*This is where we work backwards from the customer and define what our customers
-would like to do (and why). You may also include use cases for yourselves, or
-for the organization providing the product to customers.*
+U1. *As an At Home Recipes customer, I want to `get recipes with the ingredients I already have` when I `list what i have at home`*
 
-U1. *As a [product] customer, I want to `<result>` when I `<action>`*
-
-U2. *As a [product] customer, I want to view my grocery list when I log into the
-grocery list page*
+U2. *As an At Home Recipes customer, I want to view my saved recipes when I log into the
+saved recipes page*
     
-U3. ...
+U3. *As an At Home Recipes customer, I want to be able to get a list of missing items in the form of a grocery list when I select the grocery list function*
+
+U4. *As an At Home Recipes customer, I want to be able to input preferences for styles of food to cook as part of the input phase*
+
+U5 *As an At Home Recipes customer, I want to be able to get recipes without given allergens*
 
 ## 4. Project Scope
 
-*Clarify which parts of the problem you intend to solve. It helps reviewers know
-what questions to ask to make sure you are solving for what you say and stops
-discussions from getting sidetracked by aspects you do not intend to handle in
-your design.*
-
 ### 4.1. In Scope
 
-*Which parts of the problem defined in Sections 1 and 3 will you solve with this
-design?*
+* Give a list of recipes with the food that were inputted *
+* Create a grocery list if customer selects that they are olkay with shopping
+* Present a list of saved recipes
 
 ### 4.2. Out of Scope
 
-*Based on your problem description in Sections 1 and 3, are there any aspects
-you are not planning to solve? Do potential expansions or related problems occur
-to you that you want to explicitly say you are not worrying about now? Feel free
-to put anything here that you think your team can't accomplish in the unit, but
-would love to do with more time.*
+* I will not be worrying about adding hundreds of recipes to the site as would be the case with a fully functioning website.
+* I will not be adding a feature for users to add recipes
+* No functionality to include allergens or food preferences at this time
 
 # 5. Proposed Architecture Overview
 
-*Describe broadly how you are proposing to solve for the requirements you
-described in Section 3.*
 
-*This may include class diagram(s) showing what components you are planning to
-build.*
 
-*You should argue why this architecture (organization of components) is
-reasonable. That is, why it represents a good data flow and a good separation of
-concerns. Where applicable, argue why this architecture satisfies the stated
-requirements.*
+The steps to solving these problems will be as follows : 
+1. Build a class and sequence diagram to map how the different classes will work together with the client and the databases
+2. Build out the functions to get creat a recipe table, save the recipes to the table, and retrieve recipes according to keywords.
+3. create lamda functions that will enable to user to actually interact with the recipes stored in   the database
+4. create a website with a user-friendly interface making it easy to input information and retrieve data
 
 # 6. API
 
 ## 6.1. Public Models
 
-*Define the data models your service will expose in its responses via your
-*`-Model`* package. These will be equivalent to the *`PlaylistModel`* and
-*`SongModel`* from the Unit 3 project.*
+The `Models` package will contain :
+* `RecipeModels` - as a POJO for what a recipe will entail
+* `GroceryListModels` - as a POJO for what a grocery list will need
 
-## 6.2. *First Endpoint*
+## 6.2. *`Get`/recipe*
 
-*Describe the behavior of the first endpoint you will build into your service
-API. This should include what data it requires, what data it returns, and how it
-will handle any known failure cases. You should also include a sequence diagram
-showing how a user interaction goes from user to website to service to database,
-and back. This first endpoint can serve as a template for subsequent endpoints.
-(If there is a significant difference on a subsequent endpoint, review that with
-your team before building it!)*
+![img.png](img.png)
 
 *(You should have a separate section for each of the endpoints you are expecting
 to build...)*
 
-## 6.3 *Second Endpoint*
+## 6.3 *`Put`/groceryList*
 
-*(repeat, but you can use shorthand here, indicating what is different, likely
-primarily the data in/out and error conditions. If the sequence diagram is
-nearly identical, you can say in a few words how it is the same/different from
-the first endpoint)*
+![img_1.png](img_1.png)
 
 # 7. Tables
 
-*Define the DynamoDB tables you will need for the data your service will use. It
-may be helpful to first think of what objects your service will need, then
-translate that to a table structure, like with the *`Playlist` POJO* versus the
-`playlists` table in the Unit 3 project.*
+DynamoDb tables : 
+* `recipe`
+* `groceryList`
 
 # 8. Pages
 
-*Include mock-ups of the web pages you expect to build. These can be as
-sophisticated as mockups/wireframes using drawing software, or as simple as
-hand-drawn pictures that represent the key customer-facing components of the
-pages. It should be clear what the interactions will be on the page, especially
-where customers enter and submit data. You may want to accompany the mockups
-with some description of behaviors of the page (e.g. “When customer submits the
-submit-dog-photo button, the customer is sent to the doggie detail page”)*
+![img_3.png](img_3.png)
+
+*User adds all ingredients that they have or desire to use and click the generate recipes button to get a list of recipes*
+*User can select the boc under the button to indicate they are okay with going shopping and if they are, the recipes will include a list of ingredients that are needed to make those recipes*

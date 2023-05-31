@@ -1,0 +1,21 @@
+@startuml
+class RecipeDao{
+    - DynamoDBMapper : dynamoDbMapper
+    - RecipeDao(DynamoDBMapper) : dynamoDbMapper
+    }
+class Recipe {
+    - name : String
+    - typeOfFood : enum
+    - prepTime : int
+    - ingredients : List<Ingredients>
+    - caloriesPerServing : int
+    - instructions : <List> steps
+    }
+
+class RecipeModel
+class Ingredient
+class GroceryList
+class findRecipeActivity
+
+class createGroceryListActivity
+@enduml
