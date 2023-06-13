@@ -8,3 +8,6 @@
  */
 
 rootProject.name = 'UnitProject'
+include 'tst'
+include 'test'
+

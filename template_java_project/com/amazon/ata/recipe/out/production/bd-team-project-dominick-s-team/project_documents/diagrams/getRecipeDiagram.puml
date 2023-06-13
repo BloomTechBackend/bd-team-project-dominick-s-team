@@ -1,0 +1,19 @@
+@startuml
+actor Client
+participant "API Gateway"
+participant Lambda
+participant GetRecipeActivity
+database Dynamodb
+
+Client -> "API Gateway": GET/ recipe/:List<Ingredients>
+"API Gateway" -> Lambda : handleRequest(getRecipeRequest, context)
+Lambda -> GetRecipeActivity : getRecipe(String recipe)
+GetRecipeActivity -> Dynamodb : get recipe
+GetRecipeActivity <- Dynamodb :  recipe
+Lambda <- GetRecipeActivity : recipe
+"API Gateway" <- Lambda : recipe
+Client <- "API Gateway": recipe
+
+
+
+@enduml

@@ -1,0 +1,12 @@
+@startuml
+title "Put GroceryList"
+
+actor Client
+participant Website
+participant CreateGroceryList
+
+Client -> Website : missing items to shop for
+Website -> CreateGroceryList : missing items to shop for
+CreateGroceryList -> Website : Grocery List
+Website -> Client : Grocery List
+@enduml
