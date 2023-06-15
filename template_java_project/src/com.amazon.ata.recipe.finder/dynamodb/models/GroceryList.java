@@ -1,11 +1,13 @@
 package com.amazon.ata.recipe.finder.dynamodb.models;
 
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBAttribute;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
+import java.util.Collections;
 import java.util.List;
 
-@DynamoDBTable(tableName = "groceries")
+@DynamoDBTable(tableName = "GroceryList")
 public class GroceryList {
     private String date;
     private List<String> items;
@@ -24,7 +26,11 @@ public class GroceryList {
         this.date = date;
     }
 
+    @DynamoDBAttribute(attributeName = "items")
     public List<String> getItems() {
+        if(items.isEmpty()){
+            return  Collections.emptyList();
+        }
         return items;
     }
 

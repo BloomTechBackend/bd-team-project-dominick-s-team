@@ -31,12 +31,12 @@ public class CreateGroceryListActivity implements RequestHandler<CreateGroceryLi
 
     @Override
     public CreateGroceryListResult handleRequest(final CreateGroceryListRequest createGroceryListRequest, Context context) {
-        log.info("Recieved a request to create a grocery list {}");
+        log.info("Received CreateGroceryListRequest{}");
         GroceryList groceryList = groceryListDao.getGroceryList(createGroceryListRequest.getDate());
-        if(groceryList.getDate() == null) {
-            throw new GroceryListNotFoundException();
-        }
-        GroceryListModel groceryListModel = new ModelConverter().toGroceryListModel(groceryList);
+        GroceryList groceryList1 = new GroceryList(createGroceryListRequest.getDate(), createGroceryListRequest.getItems());
+
+        groceryListDao.saveGroceryList(groceryList1);
+        GroceryListModel groceryListModel = new ModelConverter().toGroceryListModel(groceryList1);
 
         return CreateGroceryListResult.builder()
                 .withGroceryList(groceryListModel)
