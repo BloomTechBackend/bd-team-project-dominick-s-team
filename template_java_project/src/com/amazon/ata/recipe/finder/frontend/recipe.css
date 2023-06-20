@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    color: rgb(13, 17, 13);
+}
+
+h2{
+    padding: 5px;
+    background:-moz-repeating-linear-gradient(2);
+    color: #000;
+}
+
+.main {
+    margin-top: 5em;
+    text-align: center;
+    margin: 65px;
+    background-color: rgb(120, 121, 164);
+  }
+  .ui {
+    color: rgb(131, 131, 245);
+  }
+
+  .center {
+    justify-content: center;
+    padding: 10px;
+    
+  }
+  
+  .ui.search input {
+    width: 80%;
+    border-radius: 0 !important;
+    
+  }
+  
+  .item {
+    padding: 15px 0px !important;
+   
+  }
+  
+  i.icon {
+    float: right;
+    font-size: 20px;
+    cursor: pointer;
+    
+  }
+  
+  .right {
+    float: right !important;
+    
+  }
+  .center-div {
+    text-align: center;
+    
+  }
+  .recipe-form{
+    background-color: #000;
+  }
+  
+  
