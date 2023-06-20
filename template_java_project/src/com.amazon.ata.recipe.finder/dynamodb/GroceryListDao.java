@@ -5,9 +5,12 @@ import com.amazon.ata.recipe.finder.dynamodb.models.GroceryList;
 import com.amazon.ata.recipe.finder.exceptions.GroceryListNotFoundException;
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 
+import javax.inject.Inject;
+
 public class GroceryListDao {
     private final DynamoDBMapper dynamoDBMapper;
 
+    @Inject
     public GroceryListDao(DynamoDBMapper dynamoDBMapper) {
         this.dynamoDBMapper = dynamoDBMapper;
     }
@@ -16,7 +19,7 @@ public class GroceryListDao {
         GroceryList groceryList = this.dynamoDBMapper.load(GroceryList.class, date);
 
         if(groceryList == null) {
-            throw new GroceryListNotFoundException("Grocery list with give date not found");
+            throw new GroceryListNotFoundException("Grocery list with given date not found");
         }
         return groceryList;
     }

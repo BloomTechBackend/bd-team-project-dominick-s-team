@@ -12,6 +12,7 @@ public class GroceryList {
     private String date;
     private List<String> items;
 
+    public GroceryList(){}
     public GroceryList (String date, List<String> items){
         this.date = date;
         this.items = items;
@@ -26,9 +27,9 @@ public class GroceryList {
         this.date = date;
     }
 
-    @DynamoDBAttribute(attributeName = "items")
+
     public List<String> getItems() {
-        if(items.isEmpty()){
+        if(this.items == null){
             return  Collections.emptyList();
         }
         return items;

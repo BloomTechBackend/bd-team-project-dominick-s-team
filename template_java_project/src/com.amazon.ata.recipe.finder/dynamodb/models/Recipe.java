@@ -1,18 +1,26 @@
 package com.amazon.ata.recipe.finder.dynamodb.models;
 
-import com.amazonaws.services.dynamodbv2.*;
+
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBHashKey;
-import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBRangeKey;
+
 import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBTable;
 
 import java.util.List;
 
-@DynamoDBTable(tableName = "recipe")
+@DynamoDBTable(tableName = "Recipe")
 public class Recipe {
     private String name;
     private String author;
-    private List<Ingredients> ingredients;
+    private List<String> ingredients;
     private List<String> instructions;
+
+    public Recipe(){}
+    public Recipe(String name, String author, List<String> ingredients, List<String> instructions) {
+        this.name = name;
+        this.author = author;
+        this.ingredients = ingredients;
+        this.instructions = instructions;
+    }
 
     @DynamoDBHashKey(attributeName = "name")
     public String getName() {
@@ -22,7 +30,7 @@ public class Recipe {
     public void setName(String name) {
         this.name = name;
     }
-    @DynamoDBRangeKey(attributeName = "author")
+
     public String getAuthor() {
         return author;
     }
@@ -31,11 +39,11 @@ public class Recipe {
         this.author = author;
     }
 
-    public List<Ingredients> getIngredients() {
+    public List<String> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List<Ingredients> ingredients) {
+    public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
     }
 

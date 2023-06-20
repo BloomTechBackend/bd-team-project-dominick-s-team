@@ -14,6 +14,7 @@ import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import com.amazonaws.services.lambda.runtime.Context;
 import com.amazonaws.services.lambda.runtime.RequestHandler;
 
+import javax.inject.Inject;
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
 
@@ -22,6 +23,7 @@ public class CreateGroceryListActivity implements RequestHandler<CreateGroceryLi
     private final Logger log = Logger.getAnonymousLogger();
     private final GroceryListDao groceryListDao;
 
+    @Inject
     public CreateGroceryListActivity(GroceryListDao groceryListDao) {
         this.groceryListDao = groceryListDao;
     }
@@ -32,7 +34,6 @@ public class CreateGroceryListActivity implements RequestHandler<CreateGroceryLi
     @Override
     public CreateGroceryListResult handleRequest(final CreateGroceryListRequest createGroceryListRequest, Context context) {
         log.info("Received CreateGroceryListRequest{}");
-        GroceryList groceryList = groceryListDao.getGroceryList(createGroceryListRequest.getDate());
         GroceryList groceryList1 = new GroceryList(createGroceryListRequest.getDate(), createGroceryListRequest.getItems());
 
         groceryListDao.saveGroceryList(groceryList1);

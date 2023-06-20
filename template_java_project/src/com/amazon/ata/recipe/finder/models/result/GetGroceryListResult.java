@@ -2,10 +2,10 @@ package com.amazon.ata.recipe.finder.models.result;
 
 import com.amazon.ata.recipe.finder.models.GroceryListModel;
 
-public class UpdateGroceryListResult {
+public class GetGroceryListResult {
     private GroceryListModel groceryList;
 
-    public UpdateGroceryListResult(Builder builder) {
+    public GetGroceryListResult(Builder builder) {
         this.groceryList = builder.groceryList;
     }
     public GroceryListModel getGroceryList() {
@@ -15,19 +15,19 @@ public class UpdateGroceryListResult {
     public void setGroceryList(GroceryListModel groceryList) {
         this.groceryList = groceryList;
     }
-    public Builder build() {
+    public static Builder builder() {
         return new Builder();
     }
 
     public static final class Builder {
         private GroceryListModel groceryList;
 
-        public Builder build(GroceryListModel groceryListToUse) {
+        public Builder withGroceryList(GroceryListModel groceryListToUse) {
             this.groceryList = groceryListToUse;
             return this;
         }
-        public UpdateGroceryListResult build() {
-            return new UpdateGroceryListResult(this);
+        public GetGroceryListResult build() {
+            return new GetGroceryListResult(this);
         }
     }
 }

@@ -8,7 +8,7 @@ import java.util.Objects;
 public class RecipeModel {
     private String name;
     private String author;
-    private List<Ingredients> ingredients;
+    private List<String> ingredients;
     private List<String> instructions;
 
     public RecipeModel() {
@@ -37,11 +37,11 @@ public class RecipeModel {
         this.author = author;
     }
 
-    public List<Ingredients> getIngredients() {
+    public List<String> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(List<Ingredients> ingredients) {
+    public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
     }
 
@@ -82,7 +82,7 @@ public class RecipeModel {
     public static final class Builder {
         private String name;
         private String author;
-        private List<Ingredients> ingredients;
+        private List<String> ingredients;
         private List<String> instructions;
 
 
@@ -96,7 +96,7 @@ public class RecipeModel {
             return this;
         }
 
-        public Builder withIngredients(List<Ingredients> ingredientsToUse) {
+        public Builder withIngredients(List<String> ingredientsToUse) {
             this.ingredients = ingredientsToUse;
             return this;
         }

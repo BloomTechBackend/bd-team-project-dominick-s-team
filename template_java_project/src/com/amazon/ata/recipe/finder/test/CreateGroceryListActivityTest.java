@@ -3,13 +3,18 @@ package com.amazon.ata.recipe.finder.test;
 import com.amazon.ata.recipe.finder.activity.CreateGroceryListActivity;
 import com.amazon.ata.recipe.finder.dynamodb.GroceryListDao;
 import com.amazon.ata.recipe.finder.dynamodb.models.GroceryList;
-import com.amazon.ata.recipe.finder.models.GroceryListModel;
+
 import com.amazon.ata.recipe.finder.models.request.CreateGroceryListRequest;
 import com.amazon.ata.recipe.finder.models.result.CreateGroceryListResult;
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
+import com.amazonaws.regions.Regions;
+import com.amazonaws.services.dynamodbv2.AmazonDynamoDBClientBuilder;
+import com.amazonaws.services.dynamodbv2.datamodeling.DynamoDBMapper;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
-import org.testng.annotations.Test;
-import org.testng.asserts.Assertion;
+import org.junit.jupiter.api.Test;
+
+
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +32,7 @@ public class CreateGroceryListActivityTest {
         items.add("butter");
         items.add("milk");
         items.add("anchovies");
+        groceryList = new GroceryListDao(new DynamoDBMapper(AmazonDynamoDBClientBuilder.standard().withCredentials(DefaultAWSCredentialsProviderChain.getInstance()).withRegion(Regions.US_WEST_2).build()));
         groceryList.saveGroceryList(new GroceryList("12/25/2024", items));
         createGroceryListActivity = new CreateGroceryListActivity(groceryList);
 
