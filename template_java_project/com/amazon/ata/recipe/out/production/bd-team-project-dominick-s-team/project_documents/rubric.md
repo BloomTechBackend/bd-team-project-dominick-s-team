@@ -1,4 +1,4 @@
-# [Team Name] Project Rubric
+# [Dominick's Team] Project Rubric
 
 ## Background
 
@@ -36,7 +36,7 @@ We want you to see the full set of expectations for transparency’s sake.*
 definition for your endpoints (can be code/configuration, or can be
 documentation). List one thing that your team learned about designing a good
 API.
-[API link]
+https://github.com/BloomTechBackend/bd-team-project-dominick-s-team/blob/1087caa1572c355d01afdda09b45855b56c3b96e/template_java_project/src/com/amazon/ata/recipe/finder/frontend/api.json
 
 
 *Endpoint definition location:*       
