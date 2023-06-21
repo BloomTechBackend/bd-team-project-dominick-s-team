@@ -37,39 +37,41 @@ instructors by the end of the unit._
 ## Week 1
 
 **Goals:**
+1. write a design document for the app i would like to build
+2. begin building out the app with unit testing
 
-**Activity:**
+
 
 **Important Docs, Commits, or Code Reviews**:
+committed the first round of code to meet goals for the week
+
 
 **Things learned:**
+I learned how to use trello to more accuratley plan the steps of a big project
+I learned how each element of an application works with the others and how one small thing wrong with the organization can break everything
 
 ## Week 2
 
 **Goals:**
+1. create corresponding stacks for the data that i want to access and store in DynamoDbTables
+2. Troubleshoot functionality and add more tests
 
 **Activity:**
+I created stack and found that the intialization was failing so i read up on that
+once I got that to work I ran into a failure to unmarshall request error which i believe is in correlation with the permissions of aws and i will need help to fix it. all test pass locally
 
-**Important Docs, Commits, or Code Reviews**:
 
 **Things learned:**
-
+I learned that even when code works locally it is important that the other parts of a program i.e. stacks are given correct permissions or the application wont work anyway
 ## Week 3
 
 **Goals:**
-
+1. learn html, javascript and other front end design languages in order to create a user interface 
 **Activity:**
-
-**Important Docs, Commits, or Code Reviews**:
+I created a simple user interface so that I could access the data stored to get recipes
+2. I prepared the functionality to create grocery lists although i will wait to implement it until later
 
 **Things learned:**
+how to type in JS as well as HTML and use CSS to design user interfaces
 
-## Week 4
 
-**Goals:**
-
-**Activity:**
-
-**Important Docs, Commits, or Code Reviews**:
-
-**Things learned:**

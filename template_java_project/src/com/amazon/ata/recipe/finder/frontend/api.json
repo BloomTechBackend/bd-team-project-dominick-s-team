@@ -1,42 +1,240 @@
 {
   "openapi": "3.0.0",
   "info": {
-    "title": "Sample API",
-    "description": "Optional multiline or single-line description in [CommonMark](http://commonmark.org/help/) or HTML.",
-    "version": "0.1.9"
+    "title": "Recipe Finder",
+    "version": "1.0.0"
   },
-  "servers": [
-    {
-      "url": "http://api.example.com/v1",
-      "description": "Optional server description, e.g. Main (production) server"
+  "path": "/activity/CreateGroceryListActivity/{groceryList}",
+  "put": {
+    "description": "Used to add a groceryList to user account",
+    "parameters": [
+      {
+        "name": "date",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "dsfhsd"
+        }
+      },
+      {
+        "name": "items",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "array",
+          "example": [
+            "eggs",
+            "food",
+            "etc"
+          ]
+        }
+      }
+    ]
+  },
+  "responses": {
+    "200": {
+      "description": "OK",
+      "content": null,
+      "application/json": null,
+      "schema": {
+        "type": "object",
+        "item": {
+          "$ref": "$/components/schema/GroceryList"
+        },
+        "example": {
+          "userId": "12/5/2020",
+          "items": [
+            "items",
+            "items",
+            "items"
+          ]
+        }
+      }
     },
-    {
-      "url": "http://staging-api.example.com",
-      "description": "Optional server description, e.g. Internal staging server for testing"
-    }
-  ],
-  "paths": {
-    "/users": {
-      "get": {
-        "summary": "Returns a list of users.",
-        "description": "Optional extended description in CommonMark or HTML.",
-        "responses": {
-          "200": {
-            "description": "A JSON array of user names",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "string"
-                  }
-                }
-              }
-            }
-          }
+    "400": {
+      "description": "input error",
+      "content": null,
+      "application/json": null,
+      "schema": {
+        "type": "object",
+        "items": {
+          "$ref": "$/components/schemas/Error"
+        },
+        "example": {
+          "code": 400,
+          "message": "invalid inputs"
+        }
+      }
+    },
+    "500": {
+      "description": "server error",
+      "content": null,
+      "application/json": null,
+      "schema": {
+        "type": "object",
+        "items": {
+          "$ref": "$/components/schemas/Error"
+        },
+        "example": {
+          "code": 500,
+          "message": "server error"
         }
       }
     }
   },
-  "name": "examples"
+"path": "/activity/GetRecipeActivity/{groceryList}",
+  "get": {
+    "description": "Retrieves a recipe with the given name",
+    "parameters": [
+      {
+        "name": "recipeName",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "dsfhsd"
+        }
+      },
+      {
+        "name": "author",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "dom"
+        }
+      }
+    ]
+  },
+  "responses": {
+    "200": {
+      "description": "OK",
+      "content": null,
+      "application/json": null,
+      "schema": {
+        "type": "object",
+        "item": {
+          "$ref": "$/components/schema/GroceryList"
+        },
+        "example": {
+          "userId": "12/5/2020",
+          "items": [
+            "items",
+            "items",
+            "items"
+          ]
+        }
+      }
+    },
+    "400": {
+      "description": "input error",
+      "content": null,
+      "application/json": null,
+      "schema": {
+        "type": "object",
+        "items": {
+          "$ref": "$/components/schemas/Error"
+        },
+        "example": {
+          "code": 400,
+          "message": "invalid inputs"
+        }
+      }
+    },
+    "500": {
+      "description": "server error",
+      "content": null,
+      "application/json": null,
+      "schema": {
+        "type": "object",
+        "items": {
+          "$ref": "$/components/schemas/Error"
+        },
+        "example": {
+          "code": 500,
+          "message": "server error"
+        }
+      }
+    }
+  },
+"path": "/activity/GetGroceryListActivity/{groceryList}",
+  "put": {
+    "description": "Used to get a grocery list for the user account",
+    "parameters": [
+      {
+        "name": "date",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "string",
+          "example": "dsfhsd"
+        }
+      },
+      {
+        "name": "items",
+        "in": "path",
+        "required": true,
+        "schema": {
+          "type": "array",
+          "example": [
+            "eggs",
+            "food",
+            "etc"
+          ]
+        }
+      }
+    ]
+  },
+  "responses": {
+    "200": {
+      "description": "OK",
+      "content": null,
+      "application/json": null,
+      "schema": {
+        "type": "object",
+        "item": {
+          "$ref": "$/components/schema/GroceryList"
+        },
+        "example": {
+          "userId": "12/5/2020",
+          "items": [
+            "items",
+            "items",
+            "items"
+          ]
+        }
+      }
+    },
+    "400": {
+      "description": "input error",
+      "content": null,
+      "application/json": null,
+      "schema": {
+        "type": "object",
+        "items": {
+          "$ref": "$/components/schemas/Error"
+        },
+        "example": {
+          "code": 400,
+          "message": "invalid inputs"
+        }
+      }
+    },
+    "500": {
+      "description": "server error",
+      "content": null,
+      "application/json": null,
+      "schema": {
+        "type": "object",
+        "items": {
+          "$ref": "$/components/schemas/Error"
+        },
+        "example": {
+          "code": 500,
+          "message": "server error"
+        }
+      }
+    }
+  }
 }
